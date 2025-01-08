@@ -1,0 +1,7 @@
+{
+  "address": "0x7ba91ddc7e717cf708c937060f04048736ec33fb1746d999a5e58cd5c677ed80",
+  "fee": 0.005,
+  "maxFee": 100,
+  "minFee": 0.3,
+  "feeAddition": 0
+}

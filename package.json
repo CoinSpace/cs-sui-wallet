@@ -1,0 +1,29 @@
+{
+  "name": "@coinspace/cs-sui-wallet",
+  "version": "0.0.0",
+  "repository": "https://github.com/CoinSpace/cs-sui-wallet",
+  "description": "SUI Wallet for Coin Wallet",
+  "author": "Coin Wallet <support@coin.space> (https://coin.space/)",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "lint": "eslint --report-unused-disable-directives .",
+    "test": "mocha test --reporter spec"
+  },
+  "dependencies": {
+    "@mysten/sui": "^1.18.0"
+  },
+  "peerDependencies": {
+    "@coinspace/cs-common": "^1.1.9"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "eslint-config-coinspace": "^3.0.0",
+    "mocha": "^11.0.1",
+    "sinon": "^19.0.2"
+  }
+}

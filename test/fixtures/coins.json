@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "coinType": "0x2::sui::SUI",
+      "coinObjectId": "0xa5a8e30db5a798a7354340b6ea78a66f50921841ab5359ec7a3dc01f282420ae",
+      "version": "103626",
+      "digest": "tw5DzJTfdxTn4f3rekFrhN7dQTUezBgsEhycDobTBLb",
+      "balance": "200000000",
+      "previousTransaction": "HSein75AFXgdsnbABWLQ5mvjFmPFWrBFi9CMVsNn7gJr"
+    },
+    {
+      "coinType": "0x2::sui::SUI",
+      "coinObjectId": "0x47dfa99496428c65b2054ad7db1872b87ff05b1047bb5e3adf5257cceb08ecb4",
+      "version": "103626",
+      "digest": "AfgFe7ZfjJ5dWV6VAy2LbtvBFhcABkvdvwEjLrRcFqtr",
+      "balance": "200000000",
+      "previousTransaction": "5WHnm9jUZEtDvSvsj7HBrP5BoxA3UY6R57qqumXJXboV"
+    },
+    {
+      "coinType": "0x2::sui::SUI",
+      "coinObjectId": "0xd4f062dbcfc3bf73f5861945592222ff7b090ac21c8a3cf840abdc5b743da778",
+      "version": "103626",
+      "digest": "9er6jxigfuQEKsn9gtPV2oW1zGQRcFtKNijHVe88GUJD",
+      "balance": "4536421995",
+      "previousTransaction": "H3gwoKE2FSLx3BwvNTTKqCsNHmg6ARzm345icHhXUAEW"
+    }
+  ],
+  "hasNextPage": false
+}
