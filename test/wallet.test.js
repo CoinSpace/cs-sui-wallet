@@ -353,7 +353,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
@@ -366,7 +366,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -400,7 +400,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
@@ -413,7 +413,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -452,7 +452,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
@@ -465,7 +465,7 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -514,14 +514,14 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -562,14 +562,14 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -616,14 +616,14 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -670,14 +670,14 @@ describe('SUI Wallet', () => {
           .withArgs({
             seed: 'device',
             method: 'GET',
-            url: 'api/v1/gas/price',
+            url: 'api/v1/gasPrice',
             baseURL: 'node',
             headers: sinon.match.any,
           }).resolves({ price: 1000 })
           .withArgs({
             seed: 'device',
             method: 'POST',
-            url: 'api/v1/transaction/dry-run',
+            url: 'api/v1/transaction/dryRun',
             baseURL: 'node',
             headers: sinon.match.any,
             data: {
@@ -736,7 +736,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'GET',
-          url: 'api/v1/gas/price',
+          url: 'api/v1/gasPrice',
           baseURL: 'node',
           headers: sinon.match.any,
         }).resolves({ price: 1000 })
@@ -749,7 +749,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'POST',
-          url: 'api/v1/transaction/dry-run',
+          url: 'api/v1/transaction/dryRun',
           baseURL: 'node',
           headers: sinon.match.any,
           data: {
@@ -790,14 +790,14 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'GET',
-          url: 'api/v1/gas/price',
+          url: 'api/v1/gasPrice',
           baseURL: 'node',
           headers: sinon.match.any,
         }).resolves({ price: 1000 })
         .withArgs({
           seed: 'device',
           method: 'POST',
-          url: 'api/v1/transaction/dry-run',
+          url: 'api/v1/transaction/dryRun',
           baseURL: 'node',
           headers: sinon.match.any,
           data: {
@@ -831,7 +831,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'GET',
-          url: 'api/v1/gas/price',
+          url: 'api/v1/gasPrice',
           baseURL: 'node',
           headers: sinon.match.any,
         }).resolves({ price: 1000 })
@@ -844,7 +844,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'POST',
-          url: 'api/v1/transaction/dry-run',
+          url: 'api/v1/transaction/dryRun',
           baseURL: 'node',
           headers: sinon.match.any,
           data: {
@@ -902,7 +902,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'GET',
-          url: 'api/v1/gas/price',
+          url: 'api/v1/gasPrice',
           baseURL: 'node',
           headers: sinon.match.any,
         }).resolves({ price: 1000 })
@@ -915,7 +915,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'POST',
-          url: 'api/v1/transaction/dry-run',
+          url: 'api/v1/transaction/dryRun',
           baseURL: 'node',
           headers: sinon.match.any,
           data: {
@@ -969,7 +969,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'GET',
-          url: 'api/v1/gas/price',
+          url: 'api/v1/gasPrice',
           baseURL: 'node',
           headers: sinon.match.any,
         }).resolves({ price: 1000 })
@@ -982,7 +982,7 @@ describe('SUI Wallet', () => {
         .withArgs({
           seed: 'device',
           method: 'POST',
-          url: 'api/v1/transaction/dry-run',
+          url: 'api/v1/transaction/dryRun',
           baseURL: 'node',
           headers: sinon.match.any,
           data: {
