@@ -860,6 +860,48 @@ describe('SUI Wallet', () => {
       assert.equal(maxAmount.value, 4859858950n);
     });
 
+    it('should correct estimate max amount (coin many objects)', async () => {
+      sinon.stub(defaultOptionsCoin, 'request')
+        .withArgs({
+          seed: 'device',
+          method: 'GET',
+          url: `api/v1/token/0x2::sui::SUI/${ADDRESS}/objects`,
+          baseURL: 'node',
+          headers: sinon.match.any,
+          params: sinon.match.any,
+        }).resolves({ data: Array(500).fill(FIXTURES['coins'].data[0]) })
+        .withArgs({
+          seed: 'device',
+          method: 'GET',
+          url: 'api/v1/gasPrice',
+          baseURL: 'node',
+          headers: sinon.match.any,
+        }).resolves({ price: 1000 })
+        .withArgs({
+          seed: 'device',
+          method: 'GET',
+          url: 'api/v4/csfee',
+          params: { crypto: 'sui@sui' },
+        }).resolves(FIXTURES['csfee'])
+        .withArgs({
+          seed: 'device',
+          method: 'POST',
+          url: 'api/v1/transaction/dryRun',
+          baseURL: 'node',
+          headers: sinon.match.any,
+          data: {
+            transaction: sinon.match.string,
+          },
+        }).resolves(FIXTURES['estimate-coin']);
+      const wallet = new Wallet({
+        ...defaultOptionsCoin,
+      });
+      await wallet.open(PUBLIC_KEY);
+      await wallet.load();
+      const maxAmount = await wallet.estimateMaxAmount({ address: SECOND_ADDRESS, price: SUI_PRICE });
+      assert.equal(maxAmount.value, 24870682588n);
+    });
+
     it('should correct estimate max amount (token)', async () => {
       sinon.stub(defaultOptionsToken, 'request')
         .withArgs({
@@ -885,6 +927,33 @@ describe('SUI Wallet', () => {
       await wallet.load();
       const maxAmount = await wallet.estimateMaxAmount({ address: SECOND_ADDRESS });
       assert.equal(maxAmount.value, 700000000n);
+    });
+
+    it('should correct estimate max amount (token many object)', async () => {
+      sinon.stub(defaultOptionsToken, 'request')
+        .withArgs({
+          seed: 'device',
+          method: 'GET',
+          url: `api/v1/token/0x2::sui::SUI/${ADDRESS}/objects`,
+          baseURL: 'node',
+          headers: sinon.match.any,
+          params: sinon.match.any,
+        }).resolves(FIXTURES['coins'])
+        .withArgs({
+          seed: 'device',
+          method: 'GET',
+          url: `api/v1/token/${usdcAtSui.address}/${ADDRESS}/objects`,
+          baseURL: 'node',
+          headers: sinon.match.any,
+          params: sinon.match.any,
+        }).resolves({ data: Array(500).fill(FIXTURES['tokens'].data[0]) });
+      const wallet = new Wallet({
+        ...defaultOptionsToken,
+      });
+      await wallet.open(PUBLIC_KEY);
+      await wallet.load();
+      const maxAmount = await wallet.estimateMaxAmount({ address: SECOND_ADDRESS });
+      assert.equal(maxAmount.value, 25000000000n);
     });
   });
 
