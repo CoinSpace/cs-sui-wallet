@@ -15,7 +15,8 @@
     "test": "mocha test --reporter spec"
   },
   "dependencies": {
-    "@mysten/sui": "^1.18.0"
+    "@mysten/sui": "^1.18.0",
+    "micro-key-producer": "^0.7.1"
   },
   "peerDependencies": {
     "@coinspace/cs-common": "^1.1.9"
