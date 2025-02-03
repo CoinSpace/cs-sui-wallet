@@ -1114,9 +1114,15 @@ describe('SUI Wallet', () => {
       const res = await wallet.loadTransactions();
       assert.equal(res.hasMore, false);
       assert.equal(res.transactions.length, 3);
+      assert.equal(res.transactions[0].incoming, false);
       assert.equal(res.transactions[0].action, SUITransaction.ACTION_TOKEN_TRANSFER);
+      assert.equal(res.transactions[0].amount.value, 0n);
+      assert.equal(res.transactions[1].incoming, false);
       assert.equal(res.transactions[1].action, SUITransaction.ACTION_TRANSFER);
+      assert.equal(res.transactions[1].amount.value, 500000000n);
+      assert.equal(res.transactions[2].incoming, true);
       assert.equal(res.transactions[2].action, SUITransaction.ACTION_TRANSFER);
+      assert.equal(res.transactions[2].amount.value, 1000000000n);
       assert.equal(res.cursor, 'eyJjIjoxNTAzNDU4NjQsInQiOjE4NTg3NDA1NzIsImkiOmZhbHNlfQ');
     });
 
