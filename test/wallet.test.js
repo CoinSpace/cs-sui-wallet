@@ -1112,17 +1112,20 @@ describe('SUI Wallet', () => {
       await wallet.load();
 
       const res = await wallet.loadTransactions();
-      assert.equal(res.hasMore, false);
       assert.equal(res.transactions.length, 3);
       assert.equal(res.transactions[0].incoming, false);
       assert.equal(res.transactions[0].action, SUITransaction.ACTION_TOKEN_TRANSFER);
-      assert.equal(res.transactions[0].amount.value, 0n);
+      assert.deepEqual(res.transactions[0].amount, new Amount(0n, sui.decimals));
+      assert.deepEqual(res.transactions[0].fee, new Amount(2345504n, sui.decimals));
       assert.equal(res.transactions[1].incoming, false);
       assert.equal(res.transactions[1].action, SUITransaction.ACTION_TRANSFER);
-      assert.equal(res.transactions[1].amount.value, 500000000n);
+      assert.deepEqual(res.transactions[1].amount, new Amount(500000000n, sui.decimals));
+      assert.deepEqual(res.transactions[1].fee, new Amount(2985880n + 62240664n, sui.decimals));
       assert.equal(res.transactions[2].incoming, true);
       assert.equal(res.transactions[2].action, SUITransaction.ACTION_TRANSFER);
-      assert.equal(res.transactions[2].amount.value, 1000000000n);
+      assert.deepEqual(res.transactions[2].amount, new Amount(1000000000n, sui.decimals));
+      assert.deepEqual(res.transactions[2].fee, new Amount(47445880n, sui.decimals));
+      assert.equal(res.hasMore, false);
       assert.equal(res.cursor, 'eyJjIjoxNTAzNDU4NjQsInQiOjE4NTg3NDA1NzIsImkiOmZhbHNlfQ');
     });
 
@@ -1162,8 +1165,16 @@ describe('SUI Wallet', () => {
       await wallet.load();
 
       const res = await wallet.loadTransactions();
-      assert.equal(res.hasMore, false);
       assert.equal(res.transactions.length, 2);
+      assert.equal(res.transactions[0].incoming, false);
+      assert.equal(res.transactions[0].action, SUITransaction.ACTION_TRANSFER);
+      assert.deepEqual(res.transactions[0].amount, new Amount(1000000n, usdcAtSui.decimals));
+      assert.deepEqual(res.transactions[0].fee, new Amount(2345504n, sui.decimals));
+      assert.equal(res.transactions[1].incoming, true);
+      assert.equal(res.transactions[1].action, SUITransaction.ACTION_TRANSFER);
+      assert.deepEqual(res.transactions[1].amount, new Amount(10000000n, usdcAtSui.decimals));
+      assert.deepEqual(res.transactions[1].fee, new Amount(2445504n, sui.decimals));
+      assert.equal(res.hasMore, false);
       assert.equal(res.cursor, 'eyJjIjoxNTAzNDU4NjQsInQiOjE4NTg3NDA1NzIsImkiOmZhbHNlfQ');
     });
   });
