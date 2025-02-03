@@ -1,6 +1,6 @@
 {
   "name": "@coinspace/cs-sui-wallet",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "repository": "https://github.com/CoinSpace/cs-sui-wallet",
   "description": "SUI Wallet for Coin Wallet",
   "author": "Coin Wallet <support@coin.space> (https://coin.space/)",
