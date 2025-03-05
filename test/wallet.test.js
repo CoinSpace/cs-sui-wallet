@@ -95,6 +95,11 @@ describe('SUI Wallet', () => {
       assert.equal(wallet.state, Wallet.STATE_CREATED);
       assert.equal(wallet.tokenUrl, 'https://suiscan.xyz/mainnet/coin/0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC');
     });
+
+    it('wallet should have tokenUrl static method', () => {
+      const url = Wallet.tokenUrl('sui', '0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC', false);
+      assert.equal(url, 'https://suiscan.xyz/mainnet/coin/0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC');
+    });
   });
 
   describe('create wallet', () => {
