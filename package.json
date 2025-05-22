@@ -21,9 +21,9 @@
     "@coinspace/cs-common": "^1.1.9"
   },
   "devDependencies": {
-    "eslint": "^9.17.0",
-    "eslint-config-coinspace": "^3.0.0",
-    "mocha": "^11.0.1",
-    "sinon": "^19.0.2"
+    "eslint": "^9.27.0",
+    "eslint-config-coinspace": "^3.0.1",
+    "mocha": "^11.4.0",
+    "sinon": "^20.0.0"
   }
 }
